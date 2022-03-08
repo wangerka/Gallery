@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.alibaba.fastjson.JSON;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -44,12 +45,20 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        //*/
                         Gson gson = new Gson();
                         Pixabay bay = gson.fromJson(response, Pixabay.class);
                         for (int i = 0; i < bay.hits.size(); i++) {
                             Log.i("gejun",i+":"+bay.hits.get(i).previewURL);
                         }
+                        /*/
+                        Pixabay bay =JSON.parseObject(response,Pixabay.class);
+                        for (int i = 0; i < bay.hits.size(); i++) {
+                            Log.i("gejun",i+":"+bay.getHits().get(i).previewURL);
+                        }
+                        //*/
                         recyclerView.setAdapter(new MyAdapter(bay.hits));
+
                     }
                 },
                 new Response.ErrorListener() {

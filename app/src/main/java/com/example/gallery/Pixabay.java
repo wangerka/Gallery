@@ -13,7 +13,35 @@ import java.util.Arrays;
             "type":"photo",
  */
 public class Pixabay {
+
+    Pixabay(){
+
+    }
     int total;
     int totalHits;
     ArrayList<PhotoItem> hits;
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public int getTotalHits() {
+        return totalHits;
+    }
+
+    public void setTotalHits(int totalHits) {
+        this.totalHits = totalHits;
+    }
+
+    public ArrayList<PhotoItem> getHits() {
+        return hits;
+    }
+
+    public void setHits(ArrayList<PhotoItem> hits) {
+        this.hits = hits;
+    }
 }
