@@ -44,10 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-//                        Log.i("gejun","response = " +response);
                         Gson gson = new Gson();
                         Pixabay bay = gson.fromJson(response, Pixabay.class);
-//                        Log.i("gejun", ""+bay.hits);
                         for (int i = 0; i < bay.hits.size(); i++) {
                             Log.i("gejun",i+":"+bay.hits.get(i).previewURL);
                         }
